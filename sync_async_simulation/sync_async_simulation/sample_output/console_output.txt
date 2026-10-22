@@ -1,0 +1,36 @@
+======================================================================
+SYNCHRONOUS vs ASYNCHRONOUS EXECUTION SIMULATION
+======================================================================
+
+--- Detailed run: 5 processes ---
+
+Synchronous timeline (each process waits for the previous one):
+  P0: start= 0.000s  end= 0.388s
+  P1: start= 0.388s  end= 0.965s
+  P2: start= 0.965s  end= 1.402s
+  P3: start= 1.402s  end= 1.796s
+  P4: start= 1.796s  end= 2.192s
+  TOTAL synchronous time  =  2.192 s
+
+Asynchronous timeline (communication delays overlap):
+  P0: start= 0.000s  end= 0.387s
+  P1: start= 0.000s  end= 0.580s
+  P2: start= 0.000s  end= 0.438s
+  P3: start= 0.000s  end= 0.395s
+  P4: start= 0.000s  end= 0.398s
+  TOTAL asynchronous time =  0.580 s
+
+Speedup (sync/async) for N=5: 3.78x
+
+======================================================================
+SCALABILITY TEST: increasing number of simulated processes
+======================================================================
+N     Sync Time(s)    Async Time(s)   Speedup   
+1     0.451           0.454           0.99      
+2     1.149           0.613           1.87      
+4     1.980           0.599           3.31      
+8     4.017           0.656           6.13      
+16    8.485           0.664           12.77     
+32    16.966          0.685           24.78     
+
+Charts saved: execution_time_comparison.png, execution_time_bar.png, timeline_comparison.png
